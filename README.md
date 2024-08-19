@@ -1,75 +1,98 @@
-LRNR Project (Testing)
+LRNR Project Testing
 Overview
-The LRNR project is a web application designed to provide an interactive and user-friendly interface. This repository includes the source code for the project, along with testing setups using Cypress for end-to-end (E2E) testing and Jest for unit testing.
+LRNR is a platform designed to guide users through their programming journey with personalized quizzes, rewarding systems, and interactive learning features. This repository contains the source code for the LRNR frontend and associated testing setup.
 
-Project Structure
-src/: Contains the source code for the frontend application.
-cypress/: Contains configuration and test files for Cypress.
-cypress.config.ts / cypress.config.js: Cypress configuration file.
-jest.config.js: Jest configuration file (if applicable).
-package.json: Lists project dependencies and scripts.
-Getting Started
-To get started with this project, follow these instructions:
+Table of Contents
+Clone the Repository
+Installation
+Running the Application
+Testing
+End-to-End (E2E) Tests with Cypress
+Unit Tests with Jest
+Clone the Repository
+To get started with the LRNR project, clone the repository from GitHub:
 
-1. Clone the Repository
-sh
+bash
 Copy code
-git clone git@github.com:BeniKiambote10/lrnr_test.git
+git clone https://github.com/your-username/lrnr.git
 cd lrnr
-2. Install Dependencies
-Install the necessary dependencies for the project, including Cypress and Jest:
+Installation
+Before you start working with the project, ensure that you have Node.js and npm installed. Then, install the project dependencies:
 
-sh
+bash
 Copy code
 npm install
-3. Cypress Setup
-Cypress is used for end-to-end (E2E) testing. To open the Cypress test runner and configure it, run:
+Install Cypress
+Cypress is used for end-to-end testing. Install it via npm:
 
-sh
+bash
+Copy code
+npm install cypress --save-dev
+Install Jest
+Jest is used for unit testing. Install it via npm:
+
+bash
+Copy code
+npm install jest --save-dev
+Running the Application
+To start the development server, run:
+
+bash
+Copy code
+npm start
+The application will be available at http://localhost:3000.
+
+Testing
+End-to-End (E2E) Tests with Cypress
+Cypress is used for testing the entire user flow in the application. We will be focusing on the homepage and other key pages of the site.
+
+Running Cypress Tests
+Open Cypress:
+
+bash
 Copy code
 npx cypress open
-This will open the Cypress Test Runner and automatically create the necessary configuration files if they do not already exist.
+This will launch the Cypress Test Runner. Select the tests you want to run from the cypress/integration directory.
 
-E2E Tests
+To run all Cypress tests in headless mode:
 
-E2E tests are located in the cypress/e2e directory. Example test files include:
-
-homepage.spec.ts: Tests for the homepage of the application.
-Running E2E Tests
-
-To run Cypress tests in headless mode, use:
-
-sh
+bash
 Copy code
 npx cypress run
-4. Jest Setup
-Jest is used for unit testing. If not already present, configure Jest by adding a jest.config.js file or adjusting the package.json:
+E2E Tests Implemented
+Home Page Test Suite:
 
-Example Jest Configuration (jest.config.js):
+Ensure the homepage title and main elements are visible and correctly displayed.
+Verify that the main features section includes the correct details.
+Check for accessibility features.
+Test the responsiveness of the homepage across different screen sizes.
+Account Page Test Suite:
 
-javascript
-Copy code
-module.exports = {
-  testEnvironment: "jsdom",
-  transform: {
-    "^.+\\.tsx?$": "ts-jest"
-  },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
-};
-Unit Tests
+Verify that the streak, platinum quizzes, and LRNR level sections are displayed with correct details.
+Ensure animations are applied correctly.
+Check for dynamic content updates.
+Unit Tests with Jest
+Jest is used for testing individual components and functionality.
 
-Unit tests are located in the __tests__ directory or alongside the components. Example test files include:
+Running Jest Tests
+Run all unit tests:
 
-homepage.test.tsx: Tests for the homepage component.
-Running Unit Tests
-
-To run Jest tests, use:
-
-sh
+bash
 Copy code
 npm test
-or
+To run tests with coverage report:
 
-sh
+bash
 Copy code
-npx jest
+npm test -- --coverage
+Unit Tests Implemented
+HomePage Component:
+
+Verify that the title and main elements are rendered correctly.
+Test that the main features section renders with the expected text.
+Ensure the correct rendering of the responsive design.
+AccountPage Component:
+
+Verify that the LRNR Level, Streak, and quizzes are displayed and dynamic.
+Test that accessibility attributes are correctly implemented.
+Check for the correct application of animations.
