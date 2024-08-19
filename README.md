@@ -14,7 +14,7 @@ To get started with the LRNR project, clone the repository from GitHub:
 
 bash
 Copy code
-git clone https://github.com/your-username/lrnr.git
+git clone git@github.com:BeniKiambote10/lrnr_test.git
 cd lrnr
 Installation
 Before you start working with the project, ensure that you have Node.js and npm installed. Then, install the project dependencies:
